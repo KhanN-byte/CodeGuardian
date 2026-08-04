@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Restore
+        run: dotnet restore CodeGuardian.slnx
+      - name: Build
+        run: dotnet build CodeGuardian.slnx --configuration Release --no-restore
+      - name: Test
+        run: dotnet run --project tests/CodeGuardian.Tests --configuration Release --no-build
