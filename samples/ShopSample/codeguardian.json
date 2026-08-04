@@ -1,0 +1,9 @@
+{
+  "architectureRules": [
+    {
+      "source": "*.Domain",
+      "cannotReference": "*.Infrastructure",
+      "message": "Domain must remain independent of infrastructure concerns."
+    }
+  ]
+}
