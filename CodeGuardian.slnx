@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CodeGuardian.Core/CodeGuardian.Core.csproj" />
+    <Project Path="src/CodeGuardian.Cli/CodeGuardian.Cli.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CodeGuardian.Tests/CodeGuardian.Tests.csproj" />
+  </Folder>
+</Solution>
