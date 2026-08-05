@@ -1,6 +1,6 @@
-# CodeGuardian
+# CodeEnhancement
 
-CodeGuardian is a Roslyn-powered command-line tool that helps .NET teams protect
+CodeEnhancement is a Roslyn-powered command-line tool that helps .NET teams protect
 architecture boundaries, find risky C# patterns, and detect breaking public API
 changes before release.
 
