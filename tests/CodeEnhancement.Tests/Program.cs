@@ -1,4 +1,4 @@
-using CodeGuardian.Core;
+using CodeEnhancement.Core;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
@@ -45,7 +45,7 @@ static Task TestArchitectureRule()
         .AddProject(ProjectInfo.Create(domainId, VersionStamp.Create(), "Shop.Domain", "Shop.Domain", LanguageNames.CSharp))
         .AddProjectReference(domainId, new ProjectReference(infrastructureId));
 
-    var config = new CodeGuardianConfiguration
+    var config = new CodeEnhancementConfiguration
     {
         ArchitectureRules =
         [

@@ -1,6 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using CodeGuardian.Core;
+using CodeEnhancement.Core;
 using Microsoft.Build.Locator;
 
 return await ProgramEntry.RunAsync(args);
@@ -39,7 +39,7 @@ internal static class ProgramEntry
         }
         catch (Exception exception)
         {
-            Console.Error.WriteLine($"codeguardian: {exception.Message}");
+            Console.Error.WriteLine($"codeenhancement: {exception.Message}");
             return 2;
         }
     }
@@ -143,7 +143,7 @@ internal static class ProgramEntry
     {
         if (args.Length == 0 || args[0].StartsWith("-", StringComparison.Ordinal))
         {
-            throw new ArgumentException($"Usage: codeguardian {usage}");
+            throw new ArgumentException($"Usage: codeenhancement {usage}");
         }
 
         return args[0];
@@ -169,7 +169,7 @@ internal static class ProgramEntry
     {
         var targetPath = Path.GetFullPath(target);
         var directory = File.Exists(targetPath) ? Path.GetDirectoryName(targetPath)! : targetPath;
-        var candidate = Path.Combine(directory, "codeguardian.json");
+        var candidate = Path.Combine(directory, "codeenhancement.json");
         return File.Exists(candidate) ? candidate : null;
     }
 
@@ -183,12 +183,12 @@ internal static class ProgramEntry
     private static void PrintHelp()
     {
         Console.WriteLine("""
-            CodeGuardian — Roslyn-powered architecture and API analysis
+            CodeEnhancement — Roslyn-powered architecture and API analysis
 
             Usage:
-              codeguardian analyze <solution-or-project> [--config <file>] [--format text|json]
-              codeguardian baseline <solution-or-project> --output <file>
-              codeguardian api-diff <solution-or-project> --baseline <file> [--format text|json]
+              codeenhancement analyze <solution-or-project> [--config <file>] [--format text|json]
+              codeenhancement baseline <solution-or-project> --output <file>
+              codeenhancement api-diff <solution-or-project> --baseline <file> [--format text|json]
 
             Rules:
               CG001  Forbidden project reference

@@ -30,9 +30,9 @@ without introducing a full analysis platform.
 Requirements: [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 
 ```bash
-dotnet build CodeGuardian.slnx
-dotnet run --project tests/CodeGuardian.Tests
-dotnet run --project src/CodeGuardian.Cli -- analyze samples/ShopSample/ShopSample.slnx
+dotnet build CodeEnhancement.slnx
+dotnet run --project tests/CodeEnhancement.Tests
+dotnet run --project src/CodeEnhancement.Cli -- analyze samples/ShopSample/ShopSample.slnx
 ```
 
 The included sample intentionally contains a forbidden project reference and
@@ -40,7 +40,7 @@ risky code patterns, so analysis returns a non-zero exit code.
 
 ## Configure architecture rules
 
-Place `codeguardian.json` next to a solution or pass `--config <path>`:
+Place `codeenhancement.json` next to a solution or pass `--config <path>`:
 
 ```json
 {
@@ -61,14 +61,14 @@ Place `codeguardian.json` next to a solution or pass `--config <path>`:
 Create a baseline:
 
 ```bash
-dotnet run --project src/CodeGuardian.Cli -- \
+dotnet run --project src/CodeEnhancement.Cli -- \
   baseline samples/ShopSample/ShopSample.slnx --output api-baseline.json
 ```
 
 Compare a later build:
 
 ```bash
-dotnet run --project src/CodeGuardian.Cli -- \
+dotnet run --project src/CodeEnhancement.Cli -- \
   api-diff samples/ShopSample/ShopSample.slnx --baseline api-baseline.json
 ```
 
@@ -86,10 +86,10 @@ Both `analyze` and `api-diff` support `--format json` for CI integration.
 ## Architecture
 
 ```text
-CodeGuardian.Cli
+CodeEnhancement.Cli
       |
       v
-CodeGuardian.Core
+CodeEnhancement.Core
   |- Workspace loading
   |- Architecture analysis
   |- Risky-code analysis

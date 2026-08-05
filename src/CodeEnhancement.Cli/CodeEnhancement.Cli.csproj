@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <AssemblyName>codeguardian</AssemblyName>
+    <AssemblyName>codeenhancement</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../CodeGuardian.Core/CodeGuardian.Core.csproj" />
+    <ProjectReference Include="../CodeEnhancement.Core/CodeEnhancement.Core.csproj" />
     <PackageReference Include="Microsoft.Build.Locator" />
     <PackageReference Include="Microsoft.Build.Framework" ExcludeAssets="runtime" PrivateAssets="all" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
 
-namespace CodeGuardian.Core;
+namespace CodeEnhancement.Core;
 
 public static class WorkspaceLoader
 {

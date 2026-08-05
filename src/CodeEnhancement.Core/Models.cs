@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace CodeGuardian.Core;
+namespace CodeEnhancement.Core;
 
 [JsonConverter(typeof(JsonStringEnumConverter<FindingSeverity>))]
 public enum FindingSeverity
@@ -28,7 +28,7 @@ public sealed record AnalysisReport(
     public int WarningCount => Findings.Count(f => f.Severity == FindingSeverity.Warning);
 }
 
-public sealed class CodeGuardianConfiguration
+public sealed class CodeEnhancementConfiguration
 {
     public List<ArchitectureRule> ArchitectureRules { get; init; } = [];
 }

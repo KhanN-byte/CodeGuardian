@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CodeEnhancement.Core/CodeEnhancement.Core.csproj" />
+    <Project Path="src/CodeEnhancement.Cli/CodeEnhancement.Cli.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CodeEnhancement.Tests/CodeEnhancement.Tests.csproj" />
+  </Folder>
+</Solution>

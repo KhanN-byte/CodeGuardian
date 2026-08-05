@@ -1,10 +1,10 @@
 using Microsoft.CodeAnalysis;
 
-namespace CodeGuardian.Core;
+namespace CodeEnhancement.Core;
 
 public sealed class ArchitectureAnalyzer
 {
-    public IReadOnlyList<Finding> Analyze(Solution solution, CodeGuardianConfiguration configuration)
+    public IReadOnlyList<Finding> Analyze(Solution solution, CodeEnhancementConfiguration configuration)
     {
         var findings = new List<Finding>();
         var projectById = solution.Projects.ToDictionary(project => project.Id);

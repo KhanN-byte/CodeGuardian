@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace CodeGuardian.Core;
+namespace CodeEnhancement.Core;
 
 public static class ConfigurationLoader
 {
@@ -11,17 +11,17 @@ public static class ConfigurationLoader
         AllowTrailingCommas = true
     };
 
-    public static async Task<CodeGuardianConfiguration> LoadAsync(
+    public static async Task<CodeEnhancementConfiguration> LoadAsync(
         string? path,
         CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
         {
-            return new CodeGuardianConfiguration();
+            return new CodeEnhancementConfiguration();
         }
 
         await using var stream = File.OpenRead(path);
-        return await JsonSerializer.DeserializeAsync<CodeGuardianConfiguration>(stream, JsonOptions, cancellationToken)
-            ?? new CodeGuardianConfiguration();
+        return await JsonSerializer.DeserializeAsync<CodeEnhancementConfiguration>(stream, JsonOptions, cancellationToken)
+            ?? new CodeEnhancementConfiguration();
     }
 }

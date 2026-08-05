@@ -1,6 +1,6 @@
 using Microsoft.CodeAnalysis;
 
-namespace CodeGuardian.Core;
+namespace CodeEnhancement.Core;
 
 public sealed class SolutionAnalysisService
 {
@@ -10,7 +10,7 @@ public sealed class SolutionAnalysisService
     public async Task<AnalysisReport> AnalyzeAsync(
         Solution solution,
         string target,
-        CodeGuardianConfiguration configuration,
+        CodeEnhancementConfiguration configuration,
         CancellationToken cancellationToken = default)
     {
         var findings = architectureAnalyzer.Analyze(solution, configuration).ToList();

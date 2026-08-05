@@ -3,6 +3,6 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../../src/CodeGuardian.Core/CodeGuardian.Core.csproj" />
+    <ProjectReference Include="../../src/CodeEnhancement.Core/CodeEnhancement.Core.csproj" />
   </ItemGroup>
 </Project>
